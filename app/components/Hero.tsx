@@ -37,6 +37,4 @@ const Hero = () => {
   )
 }
 
-// 7:49 time on video
-
 export default Hero
