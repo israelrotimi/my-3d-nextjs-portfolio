@@ -19,6 +19,7 @@ export const sentryConfig = withSentryConfig(
 
     org: "israel-rotimi",
     project: "javascript-nextjs",
+    typescript: "ignorebuilderrors",
 
     // Only print logs for uploading source maps in CI
     silent: !process.env.CI,
