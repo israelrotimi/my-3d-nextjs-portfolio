@@ -3,7 +3,6 @@ import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/app/components/ui/CanvasRevealEffect";
-import { Button } from "./MovingBorder";
 
 const Approach = () => {
   return (
@@ -102,7 +101,7 @@ const Card = ({
   );
 };
 
-const AceternityIcon = ({ order } : { order: string}) => {
+const AceternityIcon = ({ order }: { order: string }) => {
   return (
     <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
@@ -113,7 +112,7 @@ const AceternityIcon = ({ order } : { order: string}) => {
   );
 };
 
-export const Icon = ({ className, ...rest }: any) => {
+export const Icon = ({ className, ...rest }: { className: string; [key: string]: any }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -2,7 +2,6 @@ import React from 'react'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
 import { socialMedia } from '@/data'
-import { a } from 'framer-motion/client'
 
 const Footer = () => {
   return (
@@ -19,7 +18,7 @@ const Footer = () => {
                 Ready to take <span className="text-purple">your</span> digital presence to the next level
             </h1>
             <p>
-                Reach out to me today and let's discuss how I can help you reach your goals.
+                Reach out to me today and let&apos;s discuss how I can help you reach your goals.
             </p>
             <a href="mailto:israelrotimijobs@gmail.com">
                 <MagicButton
