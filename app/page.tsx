@@ -28,7 +28,8 @@ export default function Home() {
         {/* 
         Don't have any clients yet
         <Clients /> */}
-        <WorkExperience/>
+        {/* No professional experience yet 
+        <WorkExperience/> */}
         <Approach />
         <Footer />
       </div>
