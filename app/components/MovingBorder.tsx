@@ -22,12 +22,12 @@ export function Button({
 }: {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: React.ElementType;
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) {
   return (
     <Component
@@ -80,7 +80,7 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
   const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
@@ -104,17 +104,17 @@ export const MovingBorder = ({
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    // ...existing code...
-  };
+  // const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  //   // ...existing code...
+  // };
 
-  const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    // ...existing code...
-  };
+  // const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  //   // ...existing code...
+  // };
 
-  const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    // ...existing code...
-  };
+  // const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  //   // ...existing code...
+  // };
 
   return (
     <>

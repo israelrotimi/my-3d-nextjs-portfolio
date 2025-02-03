@@ -12,6 +12,7 @@ const WorkExperience = () => {
         <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
             {workExperience.map((card) => (
                 <Button
+                key={card.id}
                 borderRadius="1.75rem"
                 duration={Math.floor(Math.random() * 10000 + 10000)}
                 className="flex-1 text-white border-neutral-200 dark:border-slate-800"

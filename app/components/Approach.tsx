@@ -112,7 +112,7 @@ const AceternityIcon = ({ order }: { order: string }) => {
   );
 };
 
-export const Icon = ({ className, ...rest }: { className: string; [key: string]: any }) => {
+export const Icon = ({ className, ...rest }: { className: string; [key: string]: unknown }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
