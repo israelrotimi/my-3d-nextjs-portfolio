@@ -164,37 +164,41 @@ const ShaderMaterial: React.FC<{
   });
 
   const getUniforms = () => {
-    const preparedUniforms: { [key: string]: any } = {};
-    for (const uniformName in uniforms) {
-      const uniform = uniforms[uniformName];
+  const preparedUniforms: { [key: string]: { value: number | number[] | THREE.Vector2 | THREE.Vector3 } } = {};
+  
+  for (const uniformName in uniforms) {
+    const uniform = uniforms[uniformName];
 
-      switch (uniform.type) {
-        case "uniform1f":
-          preparedUniforms[uniformName] = { value: uniform.value };
-          break;
-        case "uniform3fv":
-          preparedUniforms[uniformName] = {
-            value: uniform.value.map((v) => new THREE.Vector3().fromArray(v as number[])),
-          };
-          break;
-        case "uniform1fv":
-          preparedUniforms[uniformName] = { value: uniform.value };
-          break;
-        case "uniform2f":
-          preparedUniforms[uniformName] = {
-            value: new THREE.Vector2().fromArray(uniform.value as number[]),
-          };
-          break;
-        default:
-          console.error(`Invalid uniform type for '${uniformName}'.`);
-      }
+    switch (uniform.type) {
+      case "uniform1f":
+        preparedUniforms[uniformName] = { value: uniform.value as number };
+        break;
+      case "uniform3fv":
+        preparedUniforms[uniformName] = {
+          value: (uniform.value as number[][]).map((v) => new THREE.Vector3().fromArray(v)),
+        };
+        break;
+      case "uniform1fv":
+        preparedUniforms[uniformName] = { value: uniform.value as number[] };
+        break;
+      case "uniform2f":
+        preparedUniforms[uniformName] = {
+          value: new THREE.Vector2().fromArray(uniform.value as number[]),
+        };
+        break;
+      default:
+        console.error(`Invalid uniform type for '${uniformName}'.`);
     }
-    preparedUniforms["u_time"] = { value: 0 };
-    preparedUniforms["u_resolution"] = {
-      value: new THREE.Vector2(size.width * 2, size.height * 2),
-    };
-    return preparedUniforms;
+  }
+
+  preparedUniforms["u_time"] = { value: 0 };
+  preparedUniforms["u_resolution"] = {
+    value: new THREE.Vector2(size.width * 2, size.height * 2),
   };
+
+  return preparedUniforms;
+};
+
 
   const material = useMemo(
     () =>
